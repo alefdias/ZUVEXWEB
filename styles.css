@@ -113,13 +113,19 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
-  background: var(--bg-glass);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  z-index: 100;
+  z-index: 1000;
   padding: 16px 0;
-  transition: var(--transition);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+  background: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  border-bottom-color: rgba(226, 232, 240, 0.9);
 }
 
 .nav-container {

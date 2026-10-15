@@ -181,19 +181,21 @@ function initFaqAccordion() {
 }
 
 /**
- * Efeito visual de blur e sombra no Navbar ao rolar a página
+ * Efeito visual de blur e sombra suave no Navbar ao rolar a página (Tema Light)
  */
 function initNavbarScroll() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.style.background = 'rgba(8, 7, 13, 0.9)';
-      navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.6)';
+  const updateNavbar = () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('scrolled');
     } else {
-      navbar.style.background = 'rgba(8, 7, 13, 0.7)';
-      navbar.style.boxShadow = 'none';
+      navbar.classList.remove('scrolled');
     }
-  }, { passive: true });
+  };
+
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
 }
+
